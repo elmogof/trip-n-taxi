@@ -13,11 +13,11 @@ export default class GuidedToursServicePage extends Component {
   async componentDidMount() {
     const services = await API.getServices(2)
     this.setState({ services: services.items })
-    console.log(this.state.services)
+    // console.log(this.state.services)
 
     const images = await API.getImages()
     this.setState({ images: images.items })
-    console.log(this.state.images)
+    // console.log(this.state.images)
   }
   render() {
     return (

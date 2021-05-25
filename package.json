@@ -1,7 +1,8 @@
 {
   "name": "trip-n-taxi",
   "version": "0.1.0",
-  "private": true,
+  "private": true,  
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
