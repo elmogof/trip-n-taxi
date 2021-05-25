@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  faFacebookF,
+  faTelegramPlane,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import PageRouter from './screens/PageRouter'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <PageRouter />
 }
-
-export default App;
+library.add(faEnvelope, faFacebookF, faWhatsapp, faTelegramPlane, faPhone)
+export default App

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Trip 'N Taxi",
+  "name": "Trip 'N Taxi",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,5 +21,8 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "lang": "en",
+  "orientation": "any",
+  "description": "Welcome to Trip-n-Taxi, the premiere taxi service in Guanacaste! We focus on Tamarindo and its surroundings areas of Flamingo, Conchal, Langosta, Avellanas, etc."
 }
