@@ -9,7 +9,7 @@ function imagesList(id, images) {
   return list
 }
 
-export default function GuidedToursServiceCards(props) {
+export default function GuidedToursServiceCards({ data, images }) {
   return (
     <div className='container-fluid d-flex flex-column py-5 px-3 px-sm-5 p-lg-0'>
       <div
@@ -28,36 +28,36 @@ export default function GuidedToursServiceCards(props) {
         GUIDED TOURS
       </h1>
       <div className='d-flex flex-wrap flex-column flex-xl-row around justify-content-center py-3 px-lg-5'>
-        {props.data.map((gt) => (
+        {data.map((guidedTour) => (
           <div
             className='col-xxl-3 d-flex flex-column border-lime m-2 justify-content-between flex-md-row flex-xxl-column py-3 px-3'
-            key={gt.id}
+            key={guidedTour.id}
           >
             <div className='d-flex justify-content-center'>
               <img
                 className='align-self-center'
-                src={gt.img_url}
+                src={guidedTour.img_url}
                 alt='...'
                 height='190'
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xxl-0 pt-3 pt-md-0 pt-lg-3'>
               <h2 className='text-center' style={{ color: '#415165' }}>
-                {gt.title}
+                {guidedTour.title}
               </h2>
               <p className='fs-6 text-center ' style={{ color: '#415165' }}>
-                {gt.description}
+                {guidedTour.description}
               </p>
               <p
                 className='fs-6 text-center fw-bold'
                 style={{ color: '#415165' }}
               >
-                PRICE per person: {gt.currency}{' '}
-                {gt.price * (1 - gt.discount / 100)}.-
+                PRICE per person: {guidedTour.currency}{' '}
+                {guidedTour.price * (1 - guidedTour.discount / 100)}.-
               </p>
               <GuidedTourModal
-                item={gt}
-                images={imagesList(gt.id, props.images)}
+                item={guidedTour}
+                images={imagesList(guidedTour.id, images)}
               />
             </div>
           </div>

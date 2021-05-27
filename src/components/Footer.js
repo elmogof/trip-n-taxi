@@ -9,30 +9,26 @@ export default function Footer() {
   const iconNames = [
     {
       id: 1,
-      type: 'fas',
-      name: 'envelope',
-      color: '#9fc247',
-      url: 'mailto:info@tripntaxi.com',
+      type: 'fab',
+      name: 'facebook-square',
+      url: 'https://facebook.com/tripntaxi',
     },
     {
       id: 2,
       type: 'fas',
-      name: 'phone',
-      color: 'gray',
-      url: 'tel:(+506) 84377472',
+      name: 'envelope',
+      url: 'mailto:info@tripntaxi.com',
     },
     {
       id: 3,
       type: 'fab',
       name: 'telegram-plane',
-      color: '#0088cc',
       url: 'https://t.me/tripntaxi',
     },
     {
       id: 4,
       type: 'fab',
       name: 'whatsapp',
-      color: '#25d366',
       url: 'https://wa.me/50686311727',
     },
   ]
@@ -52,8 +48,11 @@ export default function Footer() {
         />
       </div>
       <div className='row mx-0 py-0 pt-lg-5'>
-        <div className='col-lg d-flex py-2 py-lg-0 ps-lg-4 justify-content-center align-items-center'>
+        <div className='col-lg d-flex flex-column py-2 py-lg-0 ps-lg-4 justify-content-center align-items-center'>
           <div>
+            <p className='text-center text-white text-uppercase fw-bold fs-4'>
+              visit us at
+            </p>
             <a
               href='https://www.tripadvisor.es/Attraction_Review-g309253-d12236155-Reviews-Trip_N_Taxi-Tamarindo_Province_of_Guanacaste.html'
               target='_blank'
@@ -78,48 +77,39 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className='col-lg d-flex flex-lg-column flex-wrap py-3 py-lg-0 justify-content-center align-items-center'>
-          <div
-            className='mx-2 m-lg-1 rounded'
-            style={{
-              background: '#3b5998',
-            }}
-          >
+        <div className='col-lg d-flex flex-column py-4 py-lg-0 justify-content-center align-items-center'>
+          <p className='text-center text-white text-uppercase fw-bold fs-4'>
+            call us
+          </p>
+          <p>
             <a
-              href='https://facebook.com/tripntaxi'
+              className='text-center text-white text-uppercase fs-5 fw-bold text-decoration-none'
+              href='tel:(+506) 84377472'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <FontAwesomeIcon
-                className='pt-3'
-                icon={['fab', 'facebook-f']}
-                size='3x'
-                fixedWidth
-                inverse
-              />
+              (+506) 8437 7472
             </a>
+          </p>
+          <p className='text-center text-white text-uppercase fw-bold fs-4'>
+            also contact us at
+          </p>
+          <div className='d-flex flex-row'>
+            {iconNames.map((icon) => {
+              return (
+                <div className='m-2 m-lg-1 rounded' key={icon.id}>
+                  <a href={icon.url} target='_blank' rel='noopener noreferrer'>
+                    <FontAwesomeIcon
+                      icon={[icon.type, icon.name]}
+                      size='3x'
+                      fixedWidth
+                      inverse
+                    />
+                  </a>
+                </div>
+              )
+            })}
           </div>
-          {iconNames.map((i) => {
-            return (
-              <div
-                className='mx-2 m-lg-1 rounded'
-                key={i.id}
-                style={{
-                  background: i.color,
-                }}
-              >
-                <a href={i.url} target='_blank' rel='noopener noreferrer'>
-                  <FontAwesomeIcon
-                    className='py-2'
-                    icon={[i.type, i.name]}
-                    size='3x'
-                    fixedWidth
-                    inverse
-                  />
-                </a>
-              </div>
-            )
-          })}
         </div>
       </div>
       <div className='container-fluid py-3'>

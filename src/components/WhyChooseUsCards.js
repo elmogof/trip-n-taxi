@@ -19,7 +19,7 @@ function WhyChooseUsCards(props) {
           />
         </div>
         <h1 className='fw-bold text-center' style={{ color: '#415165' }}>
-          WHY CALL US FOR YOUR MOVES?
+          WHY US?
         </h1>
         <div className='d-flex flex-column flex-xl-row py-3 px-lg-5 my-1'>
           {props.data.map((st) => (

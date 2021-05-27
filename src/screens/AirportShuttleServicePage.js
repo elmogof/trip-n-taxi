@@ -16,13 +16,11 @@ export default class AirportShuttleServicePage extends Component {
   }
   render() {
     return (
-      <>
+      <div className='pt-5 mt-4'>
         <ScrollToTop />
         <Navigation url={this.state.route} />
-        <div className='pt-5 mt-4'>
-          <AirportShuttleServiceCards data={this.state.services} />
-        </div>
-      </>
+        <AirportShuttleServiceCards data={this.state.services} />
+      </div>
     )
   }
 }

@@ -38,9 +38,8 @@ export default class TaxiService extends Component {
   }
 
   async componentDidMount() {
-    const s = await API.getServices(3)
-    const services = s.items
-    this.setState({ services })
+    const services = await API.getServices(3)
+    this.setState({ services: services.items })
   }
   render() {
     return (

@@ -27,7 +27,7 @@ function useWindowSize() {
   return windowSize
 }
 
-export default function CommentsCarousel(props) {
+export default function CommentsCarousel({ data }) {
   var centerSlidePercentage = 33.5
   var widthPercentage = '85%'
 
@@ -56,14 +56,14 @@ export default function CommentsCarousel(props) {
         width={widthPercentage}
         showIndicators={false}
       >
-        {props.data.map((c) => {
+        {data.map((comment) => {
           return (
-            <div className='px-3 px-sm-5 px-xl-3' key={c.id}>
+            <div className='px-3 px-sm-5 px-xl-3' key={comment.id}>
               <h3 className='p-1 text-center' style={{ color: '#415165' }}>
-                {c.name}
+                {comment.name}
               </h3>
               <p className='text-justify' style={{ color: '#415165' }}>
-                {c.user_comment}
+                {comment.user_comment}
               </p>
             </div>
           )
@@ -81,7 +81,7 @@ export default function CommentsCarousel(props) {
           target='_blank'
           rel='noopener noreferrer'
         >
-          LEAVE A COMMENT
+          LEAVE A REVIEW
         </a>
       </div>
     </div>

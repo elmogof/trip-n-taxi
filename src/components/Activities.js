@@ -1,7 +1,7 @@
 import React from 'react'
 import tazul from '../media/azul.png'
 
-export default function Activities(props) {
+export default function Activities({ data }) {
   return (
     <div className='container-fluid d-flex flex-column py-5 pt-lg-0 px-3 px-sm-5 px-lg-0'>
       <div
@@ -20,25 +20,25 @@ export default function Activities(props) {
         TAXI TAMARINDO AREA
       </h1>
       <div className='d-flex flex-column flex-xl-row justify-content-center py-3 px-lg-5'>
-        {props.data.map((a) => (
+        {data.map((activities) => (
           <div
             className='col-lg d-flex flex-column border-lime m-2 justify-content-center flex-md-row flex-xl-column py-3 px-3'
-            key={a.id}
+            key={activities.id}
           >
             <div className='d-flex justify-content-center'>
               <img
                 className='align-self-center'
-                src={a.img_url}
+                src={activities.img_url}
                 alt='...'
                 height='190'
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
               <h4 className='text-center' style={{ color: '#415165' }}>
-                {a.title}
+                {activities.title}
               </h4>
               <p className='fs-6 text-center ' style={{ color: '#415165' }}>
-                {a.description}
+                {activities.description}
               </p>
             </div>
           </div>

@@ -29,7 +29,7 @@ function useWindowSize() {
   return windowSize
 }
 
-export default function Favourite(props) {
+export default function Favourite({ data, images }) {
   var centerSlidePercentage = 33.5
   var widthPercentage = '85%'
 
@@ -39,7 +39,7 @@ export default function Favourite(props) {
     widthPercentage = '90%'
   }
 
-  if (props.data) {
+  if (data) {
     return (
       <>
         <div
@@ -57,10 +57,10 @@ export default function Favourite(props) {
           </div>
           <h1 className='fw-bold text-center text-white'>PICK OF THE WEEK</h1>
           <div className='d-flex flex-column flex-xl-row justify-content-center py-3 px-lg-5'>
-            {props.data.map((f) => (
+            {data.map((favourite) => (
               <div
                 className='col-lg d-flex flex-column justify-content-between py-3 text-center px-3'
-                key={f.id}
+                key={favourite.id}
               >
                 <Carousel
                   className='d-flex justify-content-center'
@@ -74,13 +74,13 @@ export default function Favourite(props) {
                   width={widthPercentage}
                   showIndicators={false}
                 >
-                  {props.images.map((i) => {
+                  {images.map((image) => {
                     return (
-                      <div className='align-self-center' key={i.id}>
+                      <div className='align-self-center' key={image.id}>
                         <img
                           className='p-1'
-                          src={i.image}
-                          alt={i.alt_attribute}
+                          src={image.image}
+                          alt={image.alt_attribute}
                         />
                       </div>
                     )
@@ -88,27 +88,30 @@ export default function Favourite(props) {
                 </Carousel>
                 <div className='d-flex flex-column align-items-center justify-content-between pt-3 mx-md-5 px-3 px-sm-5'>
                   <div>
-                    <h4 className='text-center text-white'>{f.title}</h4>
+                    <h4 className='text-center text-white'>
+                      {favourite.title}
+                    </h4>
                   </div>
                   <div>
                     <p className='fs-6 text-center text-white px-lg-5'>
-                      {f.description}
+                      {favourite.description}
                     </p>
                   </div>
                   <div className='d-flex pb-3'>
                     <h2 className='text-center text-white fw-bold line-text pe-3'>
-                      {f.currency} {f.price}
+                      {favourite.currency} {favourite.price}
                     </h2>
                     <h2 className='text-center text-white fw-bold'>
-                      {f.currency} {f.price * (1 - f.discount / 100)}
+                      {favourite.currency}{' '}
+                      {favourite.price * (1 - favourite.discount / 100)}
                     </h2>
                   </div>
                   <div>
-                    {props.data.map((f) => (
+                    {data.map((f) => (
                       <GuidedTourModal
-                        key={f.id}
-                        item={f}
-                        images={props.images}
+                        key={favourite.id}
+                        item={favourite}
+                        images={images}
                       />
                     ))}
                   </div>

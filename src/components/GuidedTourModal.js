@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Carousel } from 'react-responsive-carousel'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -29,7 +30,7 @@ function useWindowSize() {
   return windowSize
 }
 
-function GuidedTourModal(props) {
+function GuidedTourModal({ item, images }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -37,7 +38,7 @@ function GuidedTourModal(props) {
 
   var centerSlidePercentage = 33.5
   var widthPercentage = '85%'
-  var price = props.item.price
+  var price = item.price
 
   const size = useWindowSize()
   if (size.width < 1200) {
@@ -45,8 +46,8 @@ function GuidedTourModal(props) {
     widthPercentage = '75%'
   }
 
-  if (props.item.discount) {
-    price = props.item.price * (1 - props.item.discount / 100)
+  if (item.discount) {
+    price = item.price * (1 - item.discount / 100)
   }
 
   return (
@@ -69,7 +70,7 @@ function GuidedTourModal(props) {
             className='fw-bold text-center'
             style={{ color: '#415165' }}
           >
-            {props.item.title}
+            {item.title}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='d-flex flex-column justify-content-center'>
@@ -85,24 +86,57 @@ function GuidedTourModal(props) {
             width={widthPercentage}
             showIndicators={false}
           >
-            {props.images.map((i) => {
+            {images.map((image) => {
               return (
-                <div className='align-self-center' key={i.id}>
-                  <img className='p-1' src={i.image} alt={i.alt_attribute} />
+                <div className='align-self-center' key={image.id}>
+                  <img
+                    className='p-1'
+                    src={image.image}
+                    alt={image.alt_attribute}
+                  />
                 </div>
               )
             })}
           </Carousel>
           <div className='pt-3 px-3'>
-            <p className='fs-6 text-center ' style={{ color: '#415165' }}>
-              {props.item.long_description}
+            <p className='fs-6 text-center' style={{ color: '#415165' }}>
+              {item.long_description}
             </p>
             <p
               className='fs-6 text-center fw-bold'
               style={{ color: '#415165' }}
             >
-              PRICE per person: {props.item.currency} {price}.-
+              PRICE per person: {item.currency} {price}.-
             </p>
+            <div className='d-flex flex-column flex-lg-row'>
+              <a
+                className='btn mx-auto fw-bold text-uppercase mb-2 mb-lg-0'
+                href='/'
+                style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
+                role='button'
+              >
+                <FontAwesomeIcon
+                  icon={['fab', 'whatsapp']}
+                  fixedWidth
+                  transform='grow-6'
+                  color='#415165'
+                />{' '}
+                make a reservation
+              </a>
+              <a
+                className='btn mx-auto fw-bold text-uppercase'
+                href='tel:(+506) 84377472'
+                style={{ backgroundColor: '#415165', color: '#9ed0c9' }}
+                role='button'
+              >
+                <FontAwesomeIcon
+                  icon={['fas', 'phone']}
+                  fixedWidth
+                  color='#9ed0c9'
+                />{' '}
+                call us (+506) 8437 7472
+              </a>
+            </div>
           </div>
         </Modal.Body>
         <Modal.Footer>

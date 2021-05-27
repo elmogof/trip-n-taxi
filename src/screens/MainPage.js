@@ -25,8 +25,8 @@ export default class MainPage extends Component {
     this.setState({ servicesTypes: servicesTypes.items })
     // console.log(this.state.servicesTypes)
 
-    const chooseUsData = API.getWhyChooseUs()
-    this.setState({ chooseUsData })
+    const chooseUsData = await API.getWhyChooseUs()
+    this.setState({ chooseUsData: chooseUsData.items })
     // console.log(this.state.chooseUsData)
 
     const favourite = await API.getFavourite()

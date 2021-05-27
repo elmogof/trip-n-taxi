@@ -2,7 +2,7 @@ import React from 'react'
 import tazul from '../media/azul.png'
 import { Link } from 'react-router-dom'
 
-export default function ServicesTypesCards(props) {
+export default function ServicesTypesCards({ data }) {
   return (
     <>
       <div
@@ -25,34 +25,34 @@ export default function ServicesTypesCards(props) {
           SERVICES
         </h1>
         <div className='d-flex flex-column flex-xl-row justify-content-center py-3 px-lg-5'>
-          {props.data.map((st) => (
+          {data.map((serviceType) => (
             <div
               className='col-lg d-flex flex-column justify-content-between flex-md-row flex-xl-column py-4 py-lg-3 text-center px-3'
-              key={st.id}
+              key={serviceType.id}
             >
               <div className='d-flex justify-content-center'>
                 <img
                   className='align-self-center'
-                  src={st.img_url}
-                  alt={st.alt_attribute}
+                  src={serviceType.img_url}
+                  alt={serviceType.alt_attribute}
                   height='190'
                 />
               </div>
               <div className='d-flex flex-column justify-content-between ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
                 <h4 className='text-center' style={{ color: '#415165' }}>
-                  {st.title}
+                  {serviceType.title}
                 </h4>
                 <p className='fs-6 text-center' style={{ color: '#415165' }}>
-                  {st.description}
+                  {serviceType.description}
                 </p>
                 <div className=''>
                   <Link
                     className='btn mx-auto fw-bold'
-                    to={st.service_type_url}
+                    to={serviceType.service_type_url}
                     style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
                     role='button'
                   >
-                    OPTION AND FEES
+                    OPTIONS AND FEES
                   </Link>
                 </div>
               </div>

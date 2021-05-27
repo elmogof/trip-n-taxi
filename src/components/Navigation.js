@@ -2,10 +2,10 @@ import React from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
-import logo from '../media/logo.png'
+import logo from '../media/logo-nav.png'
 import { HashLink } from 'react-router-hash-link'
 
-export default function Navigation(props) {
+export default function Navigation({ url }) {
   return (
     <>
       <Navbar
@@ -15,12 +15,13 @@ export default function Navigation(props) {
         className='py-1 fixed-top shadow-sm'
         style={{ background: '#415164' }}
       >
-        <Navbar.Brand href='/' className='ms-4 ms-lg-5 ps-lg-5'>
+        <Navbar.Brand href='/react/' className='ms-4 ms-lg-5 ps-lg-5'>
           <img
             className='img-fluid'
             src={logo}
             alt='tripntaxi logo'
             width='60'
+            height='60'
           />
         </Navbar.Brand>
         <Navbar.Toggle className='me-3' aria-controls='responsive-navbar-nav' />
@@ -35,12 +36,6 @@ export default function Navigation(props) {
             >
               Tours
             </Link>
-            {/* <Nav.Link
-              href='/#services'
-              className='text-white fs-5 px-4 text-decoration-none'
-            >
-              Services
-            </Nav.Link> */}
             <HashLink
               to='/#services'
               className='text-white fs-5 py-2 px-4 text-decoration-none'
@@ -53,14 +48,8 @@ export default function Navigation(props) {
             >
               About Us
             </Link>
-            {/* <Nav.Link
-              href='/#contact'
-              className='text-white fs-5 px-4 text-decoration-none'
-            >
-              Contact
-            </Nav.Link> */}
             <HashLink
-              to={`${props.url}/#contact`}
+              to={`${url}/#contact`}
               className='text-white fs-5 py-2 px-4 text-decoration-none'
             >
               Contact

@@ -81,37 +81,12 @@ class API {
     return res
   }
 
-  getWhyChooseUs() {
-    const res = [
-      {
-        id: 1,
-        title: 'RELIABILITY',
-        description:
-          'Cleanliness; fully inspected and totally equipped vehicles; wifi on board; experienced drivers, English speaking. We catter the trip and transportation to accomodate your needs and requests.',
-        img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
-        alt_attribute: 'reliability image',
-      },
-      {
-        id: 2,
-        title: '24/7',
-        description:
-          'Any time you need a transportation. We work around the clock and are always on time.',
-        img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
-        alt_attribute: '24/7 image',
-      },
-      {
-        id: 3,
-        title: 'BEST EXPERIENCE',
-        description:
-          'With us you will not be an spectator, you will live the experience to its fullest. Take back home the whole flavor of Costa Rica thru an unforgettable trip. Pura Vida!',
-        img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
-        alt_attribute: 'best experience image',
-      },
-    ]
-    return res
+  async getWhyChooseUs() {
+    const res = await fetch(
+      'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/whyus/'
+    )
+    const data = await res.json()
+    return data
   }
 }
 export default new API()
