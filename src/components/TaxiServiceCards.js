@@ -1,5 +1,6 @@
 import React from 'react'
 import tverde from '../media/verde.png'
+import ContactButtons from './ContactButtons'
 
 export default function TaxiServiceCards(props) {
   return (
@@ -39,14 +40,7 @@ export default function TaxiServiceCards(props) {
         ))}
       </div>
       <br />
-      <a
-        className='btn mx-auto btn-lg fw-bold'
-        href='/'
-        style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
-        role='button'
-      >
-        CONTACT HENRY
-      </a>
+      <ContactButtons btnSize='btn-lg' btnText='Contact Henry' />
       <div
         className='d-none d-lg-inline to-back'
         style={{ marginTop: '-7rem' }}

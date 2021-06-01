@@ -48,7 +48,7 @@ class API {
     return data
   }
 
-  getActivities() {
+  async getActivities() {
     const res = [
       {
         id: 1,
@@ -56,7 +56,7 @@ class API {
         description:
           'Whether you need your provision of groceries or choose for a pleasant shopping evening, count on us to manage the hassle of driving, parking and loading',
         img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
+          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/21',
         alt_attribute: 'shopping image',
       },
       {
@@ -65,7 +65,7 @@ class API {
         description:
           'We are always there to move you, your pals and boards to the best surfing spots in the area.',
         img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
+          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/22',
         alt_attribute: 'surfing image',
       },
       {
@@ -74,7 +74,7 @@ class API {
         description:
           'Pleasure and safety come along. Dine and wine with the  peace of mind to be driven back home. ',
         img_url:
-          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/6',
+          'https://zm3x36i1inftpll-listica.adb.us-phoenix-1.oraclecloudapps.com/ords/maximo/tripntaxi/miscellaneousimage/23',
         alt_attribute: 'dinning image',
       },
     ]

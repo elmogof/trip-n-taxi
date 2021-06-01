@@ -1,6 +1,7 @@
 import React from 'react'
 import tazul from '../media/azul.png'
 import tverde from '../media/verde.png'
+import ContactButtons from './ContactButtons'
 
 function WhyChooseUsCards(props) {
   return (
@@ -46,14 +47,7 @@ function WhyChooseUsCards(props) {
             </div>
           ))}
         </div>
-        <a
-          className='btn btn-lg mx-auto fw-bold '
-          href='/'
-          style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
-          role='button'
-        >
-          CONTACT US
-        </a>
+        <ContactButtons btnSize='btn-lg' btnText='Contact Us' />
         <div
           className='d-none d-lg-inline to-back'
           style={{ marginTop: '-7rem' }}

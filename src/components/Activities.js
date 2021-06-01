@@ -1,5 +1,6 @@
 import React from 'react'
 import tazul from '../media/azul.png'
+import ContactButtons from './ContactButtons'
 
 export default function Activities({ data }) {
   return (
@@ -45,14 +46,7 @@ export default function Activities({ data }) {
         ))}
       </div>
       <br />
-      <a
-        className='btn mx-auto btn-lg fw-bold'
-        href='/'
-        style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
-        role='button'
-      >
-        CONTACT HENRY
-      </a>
+      <ContactButtons btnSize='btn-lg' btnText='Contact Henry' />
     </div>
   )
 }

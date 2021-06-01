@@ -50,9 +50,6 @@ export default function Footer() {
       <div className='row mx-0 py-0 pt-lg-5'>
         <div className='col-lg d-flex flex-column py-2 py-lg-0 ps-lg-4 justify-content-center align-items-center'>
           <div>
-            <p className='text-center text-white text-uppercase fw-bold fs-4'>
-              visit us at
-            </p>
             <a
               href='https://www.tripadvisor.es/Attraction_Review-g309253-d12236155-Reviews-Trip_N_Taxi-Tamarindo_Province_of_Guanacaste.html'
               target='_blank'

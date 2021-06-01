@@ -37,9 +37,13 @@ export default class MainPage extends Component {
     this.setState({ comments: comments.items })
     // console.log(this.state.comments)
 
-    const servicesImages = await API.getImagesById(this.state.favourite[0].id)
-    this.setState({ servicesImages: servicesImages.items })
-    // console.log(this.state.servicesImages)
+    if (this.state.favourite.length > 0) {
+      const servicesImages = await API.getImagesById(
+        this.state.favourite[0].service_table_id
+      )
+      this.setState({ servicesImages: servicesImages.items })
+      // console.log(this.state.servicesImages)
+    }
   }
 
   render() {

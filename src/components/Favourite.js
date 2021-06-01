@@ -39,7 +39,7 @@ export default function Favourite({ data, images }) {
     widthPercentage = '90%'
   }
 
-  if (data) {
+  if (data.length > 0) {
     return (
       <>
         <div
@@ -102,8 +102,7 @@ export default function Favourite({ data, images }) {
                       {favourite.currency} {favourite.price}
                     </h2>
                     <h2 className='text-center text-white fw-bold'>
-                      {favourite.currency}{' '}
-                      {favourite.price * (1 - favourite.discount / 100)}
+                      {favourite.currency} {favourite.discount}
                     </h2>
                   </div>
                   <div>

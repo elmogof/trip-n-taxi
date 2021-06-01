@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Carousel } from 'react-responsive-carousel'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ContactButtons from './ContactButtons'
 
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
@@ -38,16 +38,11 @@ function GuidedTourModal({ item, images }) {
 
   var centerSlidePercentage = 33.5
   var widthPercentage = '85%'
-  var price = item.price
 
   const size = useWindowSize()
   if (size.width < 1200) {
     centerSlidePercentage = 100
     widthPercentage = '75%'
-  }
-
-  if (item.discount) {
-    price = item.price * (1 - item.discount / 100)
   }
 
   return (
@@ -106,37 +101,10 @@ function GuidedTourModal({ item, images }) {
               className='fs-6 text-center fw-bold'
               style={{ color: '#415165' }}
             >
-              PRICE per person: {item.currency} {price}.-
+              PRICE per person: {item.currency}{' '}
+              {item.discount ? item.discount : item.price}.-
             </p>
-            <div className='d-flex flex-column flex-lg-row'>
-              <a
-                className='btn mx-auto fw-bold text-uppercase mb-2 mb-lg-0'
-                href='/'
-                style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
-                role='button'
-              >
-                <FontAwesomeIcon
-                  icon={['fab', 'whatsapp']}
-                  fixedWidth
-                  transform='grow-6'
-                  color='#415165'
-                />{' '}
-                make a reservation
-              </a>
-              <a
-                className='btn mx-auto fw-bold text-uppercase'
-                href='tel:(+506) 84377472'
-                style={{ backgroundColor: '#415165', color: '#9ed0c9' }}
-                role='button'
-              >
-                <FontAwesomeIcon
-                  icon={['fas', 'phone']}
-                  fixedWidth
-                  color='#9ed0c9'
-                />{' '}
-                call us (+506) 8437 7472
-              </a>
-            </div>
+            <ContactButtons btnText='Make a reservation' />
           </div>
         </Modal.Body>
         <Modal.Footer>

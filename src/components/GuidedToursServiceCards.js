@@ -10,6 +10,8 @@ function imagesList(id, images) {
 }
 
 export default function GuidedToursServiceCards({ data, images }) {
+  console.log(data)
+  console.log(data)
   return (
     <div className='container-fluid d-flex flex-column py-5 px-3 px-sm-5 p-lg-0'>
       <div
@@ -53,7 +55,7 @@ export default function GuidedToursServiceCards({ data, images }) {
                 style={{ color: '#415165' }}
               >
                 PRICE per person: {guidedTour.currency}{' '}
-                {guidedTour.price * (1 - guidedTour.discount / 100)}.-
+                {guidedTour.discount ? guidedTour.discount : guidedTour.price}.-
               </p>
               <GuidedTourModal
                 item={guidedTour}
