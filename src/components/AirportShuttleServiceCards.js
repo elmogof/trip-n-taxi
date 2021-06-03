@@ -1,6 +1,14 @@
 import React from 'react'
 import tverde from '../media/verde.png'
 import tazul from '../media/azul.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .replace(' ', '%20')
+    .replace(/^\w/, (c) => c.toUpperCase())
+}
 
 export default function AirportShuttleServiceCards({ data }) {
   return (
@@ -53,14 +61,39 @@ export default function AirportShuttleServiceCards({ data }) {
               >
                 Additional person: {service.currency} {service.price / 4}
               </p>
-              <a
-                className='btn mx-auto fw-bold'
-                href='/'
-                style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
-                role='button'
-              >
-                RESERVE DRIVE
-              </a>
+              <div className='d-flex flex-column flex-lg-row justify-content-center align-items-center'>
+                <a
+                  className={`btn fw-bold mb-2 mb-lg-0 me-lg-1`}
+                  href={`https://wa.me/50686311727?text=Hi!%20We%20would%20like%20some%20information%20about%20${normalizeText(
+                    service.title
+                  )}%20shuttle%20service`}
+                  style={{ backgroundColor: '#9ed0c9', color: '#415165' }}
+                  role='button'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FontAwesomeIcon
+                    icon={['fab', 'whatsapp']}
+                    fixedWidth
+                    transform='grow-6'
+                    color='#415165'
+                  />{' '}
+                  {'Reserve a drive'}
+                </a>
+                <a
+                  className={`btn fw-bold text-capitalize px-4 ms-lg-1`}
+                  href='tel:(+506) 86311727'
+                  style={{ backgroundColor: '#415165', color: '#9ed0c9' }}
+                  role='button'
+                >
+                  <FontAwesomeIcon
+                    icon={['fas', 'phone']}
+                    fixedWidth
+                    color='#9ed0c9'
+                  />{' '}
+                  call us
+                </a>
+              </div>
             </div>
           </div>
         ))}

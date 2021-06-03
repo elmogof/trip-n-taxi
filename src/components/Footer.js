@@ -17,7 +17,7 @@ export default function Footer() {
       id: 2,
       type: 'fas',
       name: 'envelope',
-      url: 'mailto:info@tripntaxi.com',
+      url: 'mailto:henrychavesrosales@gmail.com',
     },
     {
       id: 3,
@@ -81,11 +81,11 @@ export default function Footer() {
           <p>
             <a
               className='text-center text-white text-uppercase fs-5 fw-bold text-decoration-none'
-              href='tel:(+506) 84377472'
+              href='tel:(+506) 86311727'
               target='_blank'
               rel='noopener noreferrer'
             >
-              (+506) 8437 7472
+              (+506) 8631 1727
             </a>
           </p>
           <p className='text-center text-white text-uppercase fw-bold fs-4'>

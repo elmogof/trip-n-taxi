@@ -40,7 +40,11 @@ export default function TaxiServiceCards(props) {
         ))}
       </div>
       <br />
-      <ContactButtons btnSize='btn-lg' btnText='Contact Henry' />
+      <ContactButtons
+        btnSize='btn-lg'
+        btnText='Contact Henry'
+        url='https://wa.me/50686311727?text=Hi!%20We%20need%20a%20transportation%20service%20in%20the%20area'
+      />
       <div
         className='d-none d-lg-inline to-back'
         style={{ marginTop: '-7rem' }}

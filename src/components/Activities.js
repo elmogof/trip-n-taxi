@@ -46,7 +46,11 @@ export default function Activities({ data }) {
         ))}
       </div>
       <br />
-      <ContactButtons btnSize='btn-lg' btnText='Contact Henry' />
+      <ContactButtons
+        btnSize='btn-lg'
+        btnText='Contact Henry'
+        url='https://wa.me/50686311727?text=Hi!%20We%20need%20a%20taxi%20service'
+      />
     </div>
   )
 }

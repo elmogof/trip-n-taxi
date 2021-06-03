@@ -47,7 +47,11 @@ function WhyChooseUsCards(props) {
             </div>
           ))}
         </div>
-        <ContactButtons btnSize='btn-lg' btnText='Contact Us' />
+        <ContactButtons
+          btnSize='btn-lg'
+          btnText='Contact Us'
+          url='https://wa.me/50686311727?text=Hi!%20We%20would%20like%20some%20information%20about%20transportation'
+        />
         <div
           className='d-none d-lg-inline to-back'
           style={{ marginTop: '-7rem' }}

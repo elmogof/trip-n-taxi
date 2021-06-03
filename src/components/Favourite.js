@@ -106,11 +106,13 @@ export default function Favourite({ data, images }) {
                     </h2>
                   </div>
                   <div>
-                    {data.map((f) => (
+                    {data.map((favourite) => (
                       <GuidedTourModal
                         key={favourite.id}
                         item={favourite}
                         images={images}
+                        btnSize='btn-lg'
+                        url='https://wa.me/50686311727?text=Hi!%20We%20would%20like%20to%20reserve%20a%20tour'
                       />
                     ))}
                   </div>

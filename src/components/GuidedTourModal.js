@@ -30,7 +30,7 @@ function useWindowSize() {
   return windowSize
 }
 
-function GuidedTourModal({ item, images }) {
+function GuidedTourModal({ item, images, btnSize }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -48,7 +48,7 @@ function GuidedTourModal({ item, images }) {
   return (
     <>
       <Button
-        className='btn mx-auto fw-bold'
+        className={`btn ${btnSize} mx-auto fw-bold`}
         onClick={handleShow}
         style={{
           backgroundColor: '#9ed0c9',
@@ -104,7 +104,10 @@ function GuidedTourModal({ item, images }) {
               PRICE per person: {item.currency}{' '}
               {item.discount ? item.discount : item.price}.-
             </p>
-            <ContactButtons btnText='Make a reservation' />
+            <ContactButtons
+              btnText='Make a reservation'
+              url='https://wa.me/50686311727?text=Hi!%20We%20would%20like%20to%20reserve%20a%20tour'
+            />
           </div>
         </Modal.Body>
         <Modal.Footer>
