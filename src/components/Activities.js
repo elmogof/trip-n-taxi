@@ -28,10 +28,9 @@ export default function Activities({ data }) {
           >
             <div className='d-flex justify-content-center'>
               <img
-                className='align-self-center'
+                className='align-self-center fit-img'
                 src={activities.img_url}
                 alt='...'
-                height='190'
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>

@@ -15,7 +15,7 @@ export default function Navigation({ url }) {
         className='py-1 fixed-top shadow-sm'
         style={{ background: '#415164' }}
       >
-        <Navbar.Brand href='/react/' className='ms-4 ms-lg-5 ps-lg-5'>
+        <Navbar.Brand href='/' className='ms-4 ms-lg-5 ps-lg-5'>
           <img
             className='img-fluid'
             src={logo}

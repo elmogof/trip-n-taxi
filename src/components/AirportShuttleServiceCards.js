@@ -36,10 +36,9 @@ export default function AirportShuttleServiceCards({ data }) {
           >
             <div className='d-flex justify-content-center'>
               <img
-                className='align-self-center'
+                className='align-self-center fit-img'
                 src={service.img_url}
                 alt='...'
-                height='190'
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
@@ -53,13 +52,13 @@ export default function AirportShuttleServiceCards({ data }) {
                 className='fs-6 text-center fw-bold m-0'
                 style={{ color: '#415165' }}
               >
-                PRICE (1-4 passengers): {service.currency} {service.price}
+                PRICE (1-4 passengers): US$ {service.currency} {service.price}
               </p>
               <p
                 className='fs-6 text-center fw-bold'
                 style={{ color: '#415165' }}
               >
-                Additional person: {service.currency} {service.price / 4}
+                Additional person: US$ {service.price / 4}
               </p>
               <div className='d-flex flex-column flex-lg-row justify-content-center align-items-center'>
                 <a

@@ -10,8 +10,6 @@ function imagesList(id, images) {
 }
 
 export default function GuidedToursServiceCards({ data, images }) {
-  console.log(data)
-  console.log(data)
   return (
     <div className='container-fluid d-flex flex-column py-5 px-3 px-sm-5 p-lg-0'>
       <div
@@ -37,7 +35,7 @@ export default function GuidedToursServiceCards({ data, images }) {
           >
             <div className='d-flex justify-content-center'>
               <img
-                className='align-self-center'
+                className='align-self-center fit-img'
                 src={guidedTour.img_url}
                 alt='...'
                 height='190'
@@ -54,7 +52,7 @@ export default function GuidedToursServiceCards({ data, images }) {
                 className='fs-6 text-center fw-bold'
                 style={{ color: '#415165' }}
               >
-                PRICE per person: {guidedTour.currency}{' '}
+                PRICE per person: US$ {guidedTour.currency}{' '}
                 {guidedTour.discount ? guidedTour.discount : guidedTour.price}.-
               </p>
               <GuidedTourModal

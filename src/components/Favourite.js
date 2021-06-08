@@ -78,7 +78,7 @@ export default function Favourite({ data, images }) {
                     return (
                       <div className='align-self-center' key={image.id}>
                         <img
-                          className='p-1'
+                          className='p-1 fit-img-favourite'
                           src={image.image}
                           alt={image.alt_attribute}
                         />
@@ -99,10 +99,10 @@ export default function Favourite({ data, images }) {
                   </div>
                   <div className='d-flex pb-3'>
                     <h2 className='text-center text-white fw-bold line-text pe-3'>
-                      {favourite.currency} {favourite.price}
+                      US$ {favourite.price}
                     </h2>
                     <h2 className='text-center text-white fw-bold'>
-                      {favourite.currency} {favourite.discount}
+                      US$ {favourite.discount}
                     </h2>
                   </div>
                   <div>

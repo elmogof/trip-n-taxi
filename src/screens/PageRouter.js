@@ -4,13 +4,14 @@ import TaxiService from './TaxiServicePage'
 import Footer from '../components/Footer'
 import MainPage from './MainPage'
 import NotFound from './NotFound'
+import AdminPanel from './AdminPanel'
 import AboutUs from './AboutUs'
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const PageRouter = () => {
   return (
-    <Router basename='/react'>
+    <Router>
       <Switch>
         <Route path='/airport-shuttle'>
           <AirportShuttleService />
@@ -26,6 +27,9 @@ const PageRouter = () => {
         </Route>
         <Route exact path='/'>
           <MainPage />
+        </Route>
+        <Route path='/admin-panel'>
+          <AdminPanel />
         </Route>
         <Route path='*'>
           <NotFound />

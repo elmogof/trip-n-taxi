@@ -59,7 +59,7 @@ function GuidedTourModal({ item, images, btnSize }) {
         MORE INFO
       </Button>
 
-      <Modal show={show} onHide={handleClose} size='lg' centered>
+      <Modal show={show} onHide={handleClose} size='xl' centered>
         <Modal.Header className='d-flex justify-content-center'>
           <Modal.Title
             className='fw-bold text-center'
@@ -85,7 +85,7 @@ function GuidedTourModal({ item, images, btnSize }) {
               return (
                 <div className='align-self-center' key={image.id}>
                   <img
-                    className='p-1'
+                    className='p-1 fit-img-modal'
                     src={image.image}
                     alt={image.alt_attribute}
                   />
@@ -101,8 +101,8 @@ function GuidedTourModal({ item, images, btnSize }) {
               className='fs-6 text-center fw-bold'
               style={{ color: '#415165' }}
             >
-              PRICE per person: {item.currency}{' '}
-              {item.discount ? item.discount : item.price}.-
+              PRICE per person: US$ {item.discount ? item.discount : item.price}
+              .-
             </p>
             <ContactButtons
               btnText='Make a reservation'

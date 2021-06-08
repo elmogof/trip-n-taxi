@@ -30,7 +30,7 @@ function WhyChooseUsCards(props) {
             >
               <div className='d-flex justify-content-center'>
                 <img
-                  className='align-self-center'
+                  className='align-self-center fit-img'
                   src={st.img_url}
                   alt={st.alt_attribute}
                   height='200'
