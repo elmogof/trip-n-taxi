@@ -88,12 +88,12 @@ export default function Favourite({ data, images }) {
                 </Carousel>
                 <div className='d-flex flex-column align-items-center justify-content-between pt-3 mx-md-5 px-3 px-sm-5'>
                   <div>
-                    <h4 className='text-center text-white'>
+                    <h4 className='text-center text-white text-break'>
                       {favourite.title}
                     </h4>
                   </div>
                   <div>
-                    <p className='fs-6 text-center text-white px-lg-5'>
+                    <p className='fs-6 text-center text-white px-lg-5 text-break'>
                       {favourite.description}
                     </p>
                   </div>

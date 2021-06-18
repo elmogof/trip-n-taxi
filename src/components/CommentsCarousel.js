@@ -59,10 +59,16 @@ export default function CommentsCarousel({ data }) {
         {data.map((comment) => {
           return (
             <div className='px-3 px-sm-5 px-xl-3' key={comment.id}>
-              <h3 className='p-1 text-center' style={{ color: '#415165' }}>
+              <h3
+                className='text-break p-1 text-center'
+                style={{ color: '#415165' }}
+              >
                 {comment.name}
               </h3>
-              <p className='text-justify' style={{ color: '#415165' }}>
+              <p
+                className='text-justify text-break'
+                style={{ color: '#415165' }}
+              >
                 {comment.user_comment}
               </p>
             </div>

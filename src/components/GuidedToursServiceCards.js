@@ -42,10 +42,16 @@ export default function GuidedToursServiceCards({ data, images }) {
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xxl-0 pt-3 pt-md-0 pt-lg-3'>
-              <h2 className='text-center' style={{ color: '#415165' }}>
+              <h2
+                className='text-break text-center'
+                style={{ color: '#415165' }}
+              >
                 {guidedTour.title}
               </h2>
-              <p className='fs-6 text-center ' style={{ color: '#415165' }}>
+              <p
+                className='text-break fs-6 text-center '
+                style={{ color: '#415165' }}
+              >
                 {guidedTour.description}
               </p>
               <p

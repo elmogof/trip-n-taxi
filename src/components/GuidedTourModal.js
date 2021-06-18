@@ -94,7 +94,10 @@ function GuidedTourModal({ item, images, btnSize }) {
             })}
           </Carousel>
           <div className='pt-3 px-3'>
-            <p className='fs-6 text-center' style={{ color: '#415165' }}>
+            <p
+              className='text-break fs-6 text-center'
+              style={{ color: '#415165' }}
+            >
               {item.long_description}
             </p>
             <p

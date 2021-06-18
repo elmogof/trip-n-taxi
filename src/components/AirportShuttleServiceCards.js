@@ -42,10 +42,16 @@ export default function AirportShuttleServiceCards({ data }) {
               />
             </div>
             <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
-              <h4 className='text-center' style={{ color: '#415165' }}>
+              <h4
+                className='text-center text-break'
+                style={{ color: '#415165' }}
+              >
                 {service.title}
               </h4>
-              <p className='fs-6 text-center ' style={{ color: '#415165' }}>
+              <p
+                className='fs-6 text-center text-break'
+                style={{ color: '#415165' }}
+              >
                 {service.description}
               </p>
               <p
