@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 const PageRouter = () => {
   return (
-    <Router>
+    <Router basename='/react'>
       <Switch>
         <Route path='/airport-shuttle'>
           <AirportShuttleService />
