@@ -2,6 +2,7 @@ import React from 'react'
 import footer_circle from '../media/footer-circles.png'
 import tripadvisor from '../media/tripadvisor.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 import listicaLogo from '../media/listica-logo.png'
 import logo from '../media/logo.png'
 
@@ -109,7 +110,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='container-fluid py-3'>
+      <div className='container-fluid d-flex justify-content-between py-3'>
+        <Link
+          to='/site-map'
+          className='text-white fs-6 fw-bold py-2 px-4 text-decoration-none'
+        >
+          Site map
+        </Link>
         <div>
           <img
             className='float-end'

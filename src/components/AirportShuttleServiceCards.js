@@ -31,17 +31,17 @@ export default function AirportShuttleServiceCards({ data }) {
       <div className='d-flex flex-column flex-xl-row justify-content-center py-3 px-lg-5'>
         {data.map((service) => (
           <div
-            className='col-lg d-flex flex-column border-lime m-2 justify-content-between flex-md-row flex-xl-column py-3 px-3'
+            className='col-xl d-flex flex-column border-lime m-2 justify-content-between flex-md-row flex-xl-column py-3 px-3'
             key={service.id}
           >
             <div className='d-flex justify-content-center'>
               <img
                 className='align-self-center fit-img'
                 src={service.img_url}
-                alt='...'
+                alt={service.alt_attribute}
               />
             </div>
-            <div className='d-flex flex-column justify-content-center ps-0 ps-md-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
+            <div className='d-flex flex-grow-1 flex-xl-grow-0 flex-column justify-content-center ps-0 ps-lg-5 ps-xl-0 pt-3 pt-md-0 pt-lg-3'>
               <h4
                 className='text-center text-break'
                 style={{ color: '#415165' }}

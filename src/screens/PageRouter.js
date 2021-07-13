@@ -8,6 +8,7 @@ import AdminPanel from './AdminPanel'
 import AboutUs from './AboutUs'
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import SiteMap from './SiteMap'
 
 const PageRouter = () => {
   return (
@@ -30,6 +31,9 @@ const PageRouter = () => {
         </Route>
         <Route path='/admin-panel'>
           <AdminPanel />
+        </Route>
+        <Route path='/site-map'>
+          <SiteMap />
         </Route>
         <Route path='*'>
           <NotFound />

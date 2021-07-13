@@ -44,7 +44,6 @@ function GuidedTourModal({ item, images, btnSize }) {
     centerSlidePercentage = 100
     widthPercentage = '75%'
   }
-  console.log(images)
 
   return (
     <>

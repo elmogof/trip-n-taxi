@@ -71,15 +71,22 @@ html body {
     height: 100%;
   }
 }
-  @media only screen and (max-width: 768px) {
-    .fit-img {
-      width: 400px;
-      height: 275px;
-    }
+
+@media only screen and (max-width: 768px) {
+  .fit-img {
+    width: 400px;
+    height: 275px;
   }
-  @media only screen and (max-width: 576px) {
-    .fit-img {
-      height: 175px;
-      width: 275px;
-    }
+}
+
+@media only screen and (max-width: 576px) {
+  .fit-img {
+    height: 175px;
+    width: 275px;
   }
+}
+
+.list-item {
+  list-style: none;
+  margin-bottom: 0;
+}
