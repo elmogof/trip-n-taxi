@@ -25,7 +25,7 @@ export default function ServicesTypesCards({ data }) {
           SERVICES
         </h1>
         <div className='d-flex flex-column flex-xl-row justify-content-center py-3 px-lg-5'>
-          {data.map((serviceType) => (
+          {data.length > 0 ? data.map((serviceType) => (
             <div
               className='col-lg d-flex flex-column justify-content-between flex-md-row flex-xl-column py-4 py-lg-3 text-center px-3'
               key={serviceType.id}
@@ -57,7 +57,8 @@ export default function ServicesTypesCards({ data }) {
                 </div>
               </div>
             </div>
-          ))}
+          )) : <></>
+          }
         </div>
         <br />
         <div

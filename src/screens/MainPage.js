@@ -5,6 +5,7 @@ import Favourite from '../components/Favourite'
 import Hero from '../components/Hero'
 import CommentsCarousel from '../components/CommentsCarousel'
 import API from '../data/Data'
+import { getServicesTypes } from '../data/DataApi'
 import Navigation from '../components/Navigation'
 
 export default class MainPage extends Component {
@@ -21,8 +22,9 @@ export default class MainPage extends Component {
   }
 
   async componentDidMount() {
-    const servicesTypes = await API.getServicesTypes()
-    this.setState({ servicesTypes: servicesTypes.items })
+
+    const servicesTypesData = await getServicesTypes()
+    this.setState({ servicesTypes: servicesTypesData })
     // console.log(this.state.servicesTypes)
 
     const chooseUsData = await API.getWhyChooseUs()
