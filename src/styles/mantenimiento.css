@@ -1,0 +1,10 @@
+.bg-tnt-green{
+    background-color: aquamarine;
+}
+
+.mantenimiento-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
