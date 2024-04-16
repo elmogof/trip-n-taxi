@@ -1,4 +1,5 @@
 import logo from '../media/logo.png'
+
 const Mantenimiento = () => {
 
   return (
