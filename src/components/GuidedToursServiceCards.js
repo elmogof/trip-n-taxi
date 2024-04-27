@@ -1,15 +1,10 @@
 import React from 'react'
 import tazul from '../media/azul.png'
 import tverde from '../media/verde.png'
+import tours from '../data/Tours'
 import GuidedTourModal from './GuidedTourModal'
 
-function imagesList(id, images) {
-  const list = images.filter((i) => i.service_table_id === id)
-  // console.log(list)
-  return list
-}
-
-export default function GuidedToursServiceCards({ data, images }) {
+export default function GuidedToursServiceCards() {
   return (
     <div className='container-fluid d-flex flex-column py-5 px-3 px-sm-5 p-lg-0'>
       <div
@@ -28,16 +23,16 @@ export default function GuidedToursServiceCards({ data, images }) {
         GUIDED TOURS
       </h1>
       <div className='d-flex flex-wrap flex-column flex-xxl-row justify-content-center py-3 px-lg-5'>
-        {data.map((guidedTour) => (
+        {tours.map((tour, index) => (
           <div
             className='col-xxl-3 d-flex flex-column flex-md-row flex-xxl-column border-lime m-2 justify-content-between py-3 px-3'
-            key={guidedTour.id}
+            key={index}
           >
             <div className='d-flex justify-content-center'>
               <img
                 className='align-self-center fit-img'
-                src={guidedTour.img_url}
-                alt={guidedTour.alt_attribute}
+                src={`/react/images/${tour.subname}/${tour.images[0]}`}
+                alt={tour.images[0]}
                 height='190'
               />
             </div>
@@ -46,25 +41,21 @@ export default function GuidedToursServiceCards({ data, images }) {
                 className='text-break text-center'
                 style={{ color: '#415165' }}
               >
-                {guidedTour.title}
+                {tour.title}
               </h2>
               <p
                 className='text-break fs-6 text-center '
                 style={{ color: '#415165' }}
               >
-                {guidedTour.description}
+                {tour.description}
               </p>
               <p
                 className='fs-6 text-center fw-bold'
                 style={{ color: '#415165' }}
               >
-                PRICE per person: US$ {guidedTour.currency}{' '}
-                {guidedTour.discount ? guidedTour.discount : guidedTour.price}.-
+                PRICE per person: US$ {tour.price}.-
               </p>
-              <GuidedTourModal
-                item={guidedTour}
-                images={imagesList(guidedTour.id, images)}
-              />
+              <GuidedTourModal tour={tour}/>
             </div>
           </div>
         ))}

@@ -30,7 +30,7 @@ function useWindowSize() {
   return windowSize
 }
 
-function GuidedTourModal({ item, images, btnSize }) {
+function GuidedTourModal({ tour, btnSize }) {
   const [show, setShow] = useState(false)
 
   const handleClose = () => setShow(false)
@@ -65,7 +65,7 @@ function GuidedTourModal({ item, images, btnSize }) {
             className='fw-bold text-center'
             style={{ color: '#415165' }}
           >
-            {item.title}
+            {tour.title}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='d-flex flex-column justify-content-center'>
@@ -81,13 +81,13 @@ function GuidedTourModal({ item, images, btnSize }) {
             width={widthPercentage}
             showIndicators={false}
           >
-            {images.map((image) => {
+            {tour.images.map((image, index) => {
               return (
-                <div className='align-self-center' key={image.id}>
+                <div className='align-self-center' key={index}>
                   <img
                     className='p-1 fit-img-modal'
-                    src={image.image}
-                    alt={image.alt_attribute}
+                    src={`/react/images/${tour.subname}/${image}`}
+                    alt={image}
                   />
                 </div>
               )
@@ -98,14 +98,13 @@ function GuidedTourModal({ item, images, btnSize }) {
               className='text-break fs-6 text-center'
               style={{ color: '#415165' }}
             >
-              {item.long_description}
+              {tour.description}
             </p>
             <p
               className='fs-6 text-center fw-bold'
               style={{ color: '#415165' }}
             >
-              PRICE per person: US$ {item.discount ? item.discount : item.price}
-              .-
+              PRICE per person: US$ {tour.price}.-
             </p>
             <ContactButtons
               btnText='Make a reservation'

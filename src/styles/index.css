@@ -36,7 +36,7 @@ html body {
 }
 
 .carousel-background {
-  background-image: url(./media/fondo-reviews.png);
+  background-image: url(../media/fondo-reviews.png);
   background-position: center center;
   background-color: #9ed0c9;
   background-repeat: no-repeat;
